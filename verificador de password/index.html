@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Comparador de Contraseñas</title>
+
+</head>
+<body>
+    <label for="password1">Contraseña:</label>
+    <input type="password" id="password1"><br>
+
+    <label for="password2">Confirmar Contraseña:</label>
+    <input type="password" id="password2"><br>
+
+    <div class="message" id="message"></div>
+
+    <script>
+        document.getElementById('password2').addEventListener('keyup', function() {
+            var password1 = document.getElementById('password1').value;
+            var password2 = this.value;
+            var message = document.getElementById('message');
+
+            if(password1 === password2) {
+                message.innerText = 'Las contraseñas coinciden.';
+                message.style.color = 'green';
+            } else {
+                message.innerText = 'Las contraseñas no coinciden.';
+                message.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
